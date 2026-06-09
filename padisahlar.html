@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padişahlar</title>
+    <style>
+        /* Ana Sayfaya Dönüş Butonu Tasarımı */
+nav {
+    text-align: center; /* Butonu sayfanın tam ortasına alır */
+    margin: 20px 0 30px 0; /* Posterle arasına nefes alacak bir boşluk bırakır */
+}
+
+nav a {
+    display: inline-block;
+    background-color: #800000; /* Posterin dış çerçevesiyle aynı tok bordo renk */
+    color: white;
+    text-decoration: none; /* Altındaki o çirkin çizgiyi kaldırır */
+    padding: 12px 30px; /* İç boşluklar vererek yazıdan butona dönüştürür */
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #b8860b; /* Altın sarısı zarif bir çerçeve */
+    border-radius: 8px; /* Köşeleri hafif yumuşatır */
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3); /* Hafif ve şık bir gölge ekler */
+    transition: all 0.3s ease; /* Üzerine gelince oluşacak animasyonu yumuşatır */
+}
+
+nav a:hover {
+    background-color: #b8860b; /* Fareyle üzerine gelince altın sarısına döner */
+    color: #800000; /* Yazı rengi bordoya döner */
+    transform: scale(1.05); /* Fareyle üzerine gelince butonu hafifçe büyütür */
+}
+        /* Posterin En Dış Alanı */
+.poster-kapsayici {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* 10 Sütunlu Muazzam Izgara Sistemi */
+.padisah-tablosu {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* Yan yana tam 10 eşit sütun oluşturur */
+    gap: 8px; /* Kartlar arasındaki ince boşluk */
+    background-color: #e2cfb5; /* Fotoğraftaki eski kağıt/ahşap rengi tonu */
+    padding: 15px;
+    border: 15px solid #800000; /* Fotoğraftaki kalın bordo dış çerçeve */
+    border-radius: 4px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* ORTADAKİ LOGO VE YAZININ SİHİRLİ AYARI */
+.orta-alan {
+    grid-column: 5 / 7; /* 5. ve 6. sütunları birleştirip tek kutu yapar */
+    grid-row: 1 / 3;    /* 1. ve 2. satırları birleştirip aşağı doğru uzatır */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.poster-arma {
+    width: 90px; /* Ortadaki armanın boyutu */
+    height: auto;
+}
+
+.poster-baslik {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    color: #111;
+    font-style: italic;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+/* TEK BİR PADİŞAH KARTININ TASARIMI */
+.padisah-karti {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid #b8860b; /* Kartların etrafındaki altın sarısı/kahve çerçeve */
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+.kart-baslik {
+    background-color: #b8860b; /* Altın sarısı şerit */
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 0;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.padisah-karti img {
+    width: 100%;
+    height: 110px; /* Resimlerin hepsinin aynı boyutta olması için sabit yükseklik */
+    object-fit: cover; /* Resmi bozmadan kutuya sığdırır */
+    border: 1px solid #b8860b;
+}
+
+/* FOTOĞRAFTAKİ KOYU YEŞİL BİLGİ KUTUSU */
+.kart-detay {
+    background-color: #0d362b; /* Fotoğraftaki o koyu imparatorluk yeşili */
+    color: #ffffff;
+    padding: 4px;
+    font-size: 9px; /* Yazılar görseldeki gibi küçük ve derli toplu duracak */
+    line-height: 1.3;
+    margin-top: 4px;
+    border-radius: 2px;
+}
+
+.kart-detay p {
+    margin: 2px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.1); /* Satırlar arası ince kesik çizgi */
+}
+
+.kart-detay p:last-child {
+    border-bottom: none;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Anasayfa</a>
+    </nav>
+    <div class="poster-kapsayici">
+        <div class="padisah-tablosu">
+           <div class="padisah-karti">
+            <div class="kart-baslik">(1) OSMAN GAZİ</div>
+            <img src="Osman_Gazi2.jpg" alt="Osman Gazi">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Ertuğrul Gazi</p>
+                <p><strong>Ana Adı:</strong> Halime Hatun</p>
+                <p><strong>Doğum:</strong> Söğüt - 1258</p>
+                <p><strong>Vefat:</strong> Bursa - 1326</p>
+                <p><strong>Saltanat:</strong> 1299-1326</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(2) ORHAN GAZİ</div>
+            <img src="Orhan_Gazi.jpg" alt="Orhan Gazi">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Osman Gazi</p>
+                <p><strong>Ana Adı:</strong> Malhun Hatun</p>
+                <p><strong>Doğum:</strong> Söğüt - 1281</p>
+                <p><strong>Vefat:</strong> Bursa - 1362</p>
+                <p><strong>Saltanat:</strong> 1326-1362</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(3) SULTAN I. MURAD</div>
+            <img src="Murat_Hüdavendigar.jpg" alt="I. Murad">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Orhan Gazi</p>
+                <p><strong>Ana Adı:</strong> Nilüfer Hatun</p>
+                <p><strong>Doğum:</strong> Bursa - 1326</p>
+                <p><strong>Vefat:</strong> Kosova - 1389</p>
+                <p><strong>Saltanat:</strong> 1362-1389</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(4) SULTAN I. BAYEZİD</div>
+            <img src="Yıldırım_I._Bayezit.jpg" alt="Yıldırım Bayezid">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> I. Murad</p>
+                <p><strong>Ana Adı:</strong> Gülçiçek Hatun</p>
+                <p><strong>Doğum:</strong> Edirne - 1360</p>
+                <p><strong>Vefat:</strong> Akşehir - 1403</p>
+                <p><strong>Saltanat:</strong> 1389-1402</p>
+            </div>
+        </div>
+
+        <div class="orta-alan">
+            <img src="osmanlı arması.jpg" alt="Osmanlı Arması" class="poster-arma">
+            <h2 class="poster-baslik">Osmanlı Padişahları</h2>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(5) SULTAN I. MEHMED</div>
+            <img src="Çelebi_Mehmet.jpg" alt="Çelebi Mehmed">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> I. Bayezid</p>
+                <p><strong>Ana Adı:</strong> Devlet Hatun</p>
+                <p><strong>Doğum:</strong> Edirne - 1382</p>
+                <p><strong>Vefat:</strong> Edirne - 1421</p>
+                <p><strong>Saltanat:</strong> 1413-1421</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(6) SULTAN II. MURAD</div>
+            <img src="II._Murat.jpg" alt="II. Murad">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> I. Mehmed (Çelebi)</p>
+                <p><strong>Ana Adı:</strong> Emine Hatun</p>
+                <p><strong>Doğum:</strong> Amasya - 1404</p>
+                <p><strong>Vefat:</strong> Edirne - 1451</p>
+                <p><strong>Saltanat:</strong> 1421-1451</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(7) FATİH SULTAN MEHMED</div>
+            <img src="Fatih_II._Mehmet.jpg" alt="Fatih Sultan Mehmed">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> II. Murad</p>
+                <p><strong>Ana Adı:</strong> Hüma Hatun</p>
+                <p><strong>Doğum:</strong> Edirne - 1432</p>
+                <p><strong>Vefat:</strong> Gebze (Sefer yolunda) - 1481</p>
+                <p><strong>Saltanat:</strong> 1451-1481</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(8) SULTAN II. BAYEZİD</div>
+            <img src="Sultan_II._Bayezit.jpg" alt="II. Bayezid">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Fatih Sultan Mehmed</p>
+                <p><strong>Ana Adı:</strong> I. Gülbahar Hatun</p>
+                <p><strong>Doğum:</strong> Dimetoka - 1447</p>
+                <p><strong>Vefat:</strong> Edirne (Sürgün yolunda) - 1512</p>
+                <p><strong>Saltanat:</strong> 1481-1512</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(9) YAVUZ SULTAN SELİM</div>
+            <img src="i.webp" alt="Yavuz Sultan Selim">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> II. Bayezid</p>
+                <p><strong>Ana Adı:</strong> II. Gülbahar Hatun</p>
+                <p><strong>Doğum:</strong> Amasya - 1470</p>
+                <p><strong>Vefat:</strong> Çorlu - 1520</p>
+                <p><strong>Saltanat:</strong> 1512-1520</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(10) KANUNİ SULTAN SÜLEYMAN</div>
+            <img src="kanuni.webp" alt="Kanuni Sultan Süleyman">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Yavuz Sultan Selim</p>
+                <p><strong>Ana Adı:</strong> Hafsa Sultan</p>
+                <p><strong>Doğum:</strong> Trabzon - 1494</p>
+                <p><strong>Vefat:</strong> Zigetvar - 1566</p>
+                <p><strong>Saltanat:</strong> 1520-1566</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(11) SULTAN II. SELİM</div>
+            <img src="2.selim.webp" alt="II. Selim">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Kanuni Sultan Süleyman</p>
+                <p><strong>Ana Adı:</strong> Hürrem Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1524</p>
+                <p><strong>Vefat:</strong> İstanbul - 1574</p>
+                <p><strong>Saltanat:</strong> 1566-1574</p>
+            </div>
+        </div>
+
+            <div class="padisah-karti">
+                <div class="kart-baslik">(12) SULTAN III. MURAD</div>
+                <img src="III._Murat_Han.jpg" alt="III. Murad">
+                <div class="kart-detay">
+                    <p><strong>Baba Adı:</strong> II. Selim</p>
+                    <p><strong>Ana Adı:</strong> Nurbanu Sultan</p>
+                    <p><strong>Doğum:</strong> Manisa - 1546</p>
+                    <p><strong>Vefat:</strong> İstanbul - 1595</p>
+                    <p><strong>Saltanat:</strong> 1574-1595</p>
+                </div>
+            </div>
+            <div class="padisah-karti">
+            <div class="kart-baslik">(13) SULTAN III. MEHMED</div>
+            <img src="Mehmed_III.jpg" alt="III. Mehmed">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> III. Murad</p>
+                <p><strong>Ana Adı:</strong> Safiye Sultan</p>
+                <p><strong>Doğum:</strong> Manisa - 1566</p>
+                <p><strong>Vefat:</strong> İstanbul - 1603</p>
+                <p><strong>Saltanat:</strong> 1595-1603</p>
+            </div>
+            </div>
+
+            <div class="padisah-karti">
+            <div class="kart-baslik">(14) SULTAN I. AHMED</div>
+            <img src="Sultan_I._Ahmet.jpg" alt="I. Ahmed">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> III. Mehmed</p>
+                <p><strong>Ana Adı:</strong> Handan Sultan</p>
+                <p><strong>Doğum:</strong> Manisa - 1590</p>
+                <p><strong>Vefat:</strong> İstanbul - 1617</p>
+                <p><strong>Saltanat:</strong> 1603-1617</p>
+            </div>
+            </div>
+
+          <div class="padisah-karti">
+            <div class="kart-baslik">(15) SULTAN I. MUSTAFA</div>
+            <img src="1. mustafa.jpg" alt="I. Mustafa">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> III. Mehmed</p>
+                <p><strong>Ana Adı:</strong> Halime Sultan</p>
+                <p><strong>Doğum:</strong> Manisa - 1591</p>
+                <p><strong>Vefat:</strong> İstanbul - 1639</p>
+                <p><strong>Saltanat:</strong> 1617-1618 / 1622-1623</p>
+            </div>
+          </div>
+
+          <div class="padisah-karti">
+            <div class="kart-baslik">(16) GENÇ OSMAN</div>
+            <img src="Genç_Osman.jpg" alt="Genç Osman">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> I. Ahmed</p>
+                <p><strong>Ana Adı:</strong> Mahfiruz Hatice Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1604</p>
+                <p><strong>Vefat:</strong> İstanbul - 1622</p>
+                <p><strong>Saltanat:</strong> 1618-1622</p>
+            </div>
+         </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(17) SULTAN IV. MURAD</div>
+            <img src="IV._Murat.jpg" alt="IV. Murad">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> I. Ahmed</p>
+                <p><strong>Ana Adı:</strong> Kösem Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1612</p>
+                <p><strong>Vefat:</strong> İstanbul - 1640</p>
+                <p><strong>Saltanat:</strong> 1623-1640</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(18) SULTAN İBRAHİM</div>
+            <img src="Ibrahim_I.jpg" alt="Sultan İbrahim">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> I. Ahmed</p>
+                <p><strong>Ana Adı:</strong> Kösem Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1615</p>
+                <p><strong>Vefat:</strong> İstanbul - 1648</p>
+                <p><strong>Saltanat:</strong> 1640-1648</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(19) SULTAN IV. MEHMED</div>
+            <img src="4.mehmed.webp" alt="IV. Mehmed">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Sultan İbrahim</p>
+                <p><strong>Ana Adı:</strong> Turhan Hatice Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1642</p>
+                <p><strong>Vefat:</strong> Edirne - 1693</p>
+                <p><strong>Saltanat:</strong> 1648-1687</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(20) SULTAN II. SÜLEYMAN</div>
+            <img src="2.süleyman.jpg" alt="II. Süleyman">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Sultan İbrahim</p>
+                <p><strong>Ana Adı:</strong> Saliha Dilaşub Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1642</p>
+                <p><strong>Vefat:</strong> Edirne - 1691</p>
+                <p><strong>Saltanat:</strong> 1687-1691</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(21) SULTAN II. AHMED</div>
+            <img src="Ahmet_II.jpg" alt="II. Ahmed">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Sultan İbrahim</p>
+                <p><strong>Ana Adı:</strong> Hatice Muazzez Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1643</p>
+                <p><strong>Vefat:</strong> Edirne - 1695</p>
+                <p><strong>Saltanat:</strong> 1691-1695</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(22) SULTAN II. MUSTAFA</div>
+            <img src="II._Mustafa.jpg" alt="II. Mustafa">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> IV. Mehmed</p>
+                <p><strong>Ana Adı:</strong> E. Rabia Gülnuş Sultan</p>
+                <p><strong>Doğum:</strong> Edirne - 1664</p>
+                <p><strong>Vefat:</strong> İstanbul - 1703</p>
+                <p><strong>Saltanat:</strong> 1695-1703</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(23) SULTAN III. AHMED</div>
+            <img src="500px-III._Ahmet.jpg" alt="III. Ahmed">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> IV. Mehmed</p>
+                <p><strong>Ana Adı:</strong> E. Rabia Gülnuş Sultan</p>
+                <p><strong>Doğum:</strong> Pazarcık - 1673</p>
+                <p><strong>Vefat:</strong> İstanbul - 1736</p>
+                <p><strong>Saltanat:</strong> 1703-1730</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(24) SULTAN I. MAHMUD</div>
+            <img src="Mahmud1.jpg" alt="I. Mahmud">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> II. Mustafa</p>
+                <p><strong>Ana Adı:</strong> Saliha Sebkati Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1696</p>
+                <p><strong>Vefat:</strong> İstanbul - 1754</p>
+                <p><strong>Saltanat:</strong> 1730-1754</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(25) SULTAN III. OSMAN</div>
+            <img src="3.osman.jpg" alt="III. Osman">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> II. Mustafa</p>
+                <p><strong>Ana Adı:</strong> Şehsuvar Sultan</p>
+                <p><strong>Doğum:</strong> Edirne - 1699</p>
+                <p><strong>Vefat:</strong> İstanbul - 1757</p>
+                <p><strong>Saltanat:</strong> 1754-1757</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(26) SULTAN III. MUSTAFA</div>
+            <img src="Mustafa3.jpg" alt="III. Mustafa">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> III. Ahmed</p>
+                <p><strong>Ana Adı:</strong> Mihrişah Kadın</p>
+                <p><strong>Doğum:</strong> İstanbul - 1717</p>
+                <p><strong>Vefat:</strong> İstanbul - 1774</p>
+                <p><strong>Saltanat:</strong> 1757-1774</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(27) SULTAN I. ABDÜLHAMİD</div>
+            <img src="1.abdülhamid.jpg" alt="I. Abdülhamid">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> III. Ahmed</p>
+                <p><strong>Ana Adı:</strong> Rabia Şermi Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1725</p>
+                <p><strong>Vefat:</strong> İstanbul - 1789</p>
+                <p><strong>Saltanat:</strong> 1774-1789</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(28) SULTAN III. SELİM</div>
+            <img src="Konstantin_Kapidagli_002.jpg" alt="III. Selim">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> III. Mustafa</p>
+                <p><strong>Ana Adı:</strong> Mihrişah Valide Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1761</p>
+                <p><strong>Vefat:</strong> İstanbul - 1808</p>
+                <p><strong>Saltanat:</strong> 1789-1807</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(29) SULTAN IV. MUSTAFA</div>
+            <img src="IV._Mustafa.jpg" alt="IV. Mustafa">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> I. Abdülhamid</p>
+                <p><strong>Ana Adı:</strong> Sineperver Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1779</p>
+                <p><strong>Vefat:</strong> İstanbul - 1808</p>
+                <p><strong>Saltanat:</strong> 1807-1808</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(30) SULTAN II. MAHMUD</div>
+            <img src="Mahmud_II.jpg" alt="II. Mahmud">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> I. Abdülhamid</p>
+                <p><strong>Ana Adı:</strong> Nakşidil Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1785</p>
+                <p><strong>Vefat:</strong> İstanbul - 1839</p>
+                <p><strong>Saltanat:</strong> 1808-1839</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(31) SULTAN ABDÜLMECİD</div>
+            <img src="abdülmecid.webp" alt="Abdülmecid">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> II. Mahmud</p>
+                <p><strong>Ana Adı:</strong> Bezmialem Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1823</p>
+                <p><strong>Vefat:</strong> İstanbul - 1861</p>
+                <p><strong>Saltanat:</strong> 1839-1861</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(32) SULTAN ABDÜLAZİZ</div>
+            <img src="Abdulaziz.jpg" alt="Abdülaziz">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> II. Mahmud</p>
+                <p><strong>Ana Adı:</strong> Pertevniyal Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1830</p>
+                <p><strong>Vefat:</strong> İstanbul - 1876</p>
+                <p><strong>Saltanat:</strong> 1861-1876</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(33) SULTAN V. MURAD</div>
+            <img src="Portrait_of_Murad_V.jpg" alt="V. Murad">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Abdülmecid</p>
+                <p><strong>Ana Adı:</strong> Şevkefza Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1840</p>
+                <p><strong>Vefat:</strong> İstanbul - 1904</p>
+                <p><strong>Saltanat:</strong> 1876</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(34) SULTAN II. ABDÜLHAMİD</div>
+            <img src="abdülhamid 2.png" alt="II. Abdülhamid">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Abdülmecid</p>
+                <p><strong>Ana Adı:</strong> Tirimüjgan Sultan</p>
+                <p><strong>Doğum:</strong> İstanbul - 1842</p>
+                <p><strong>Vefat:</strong> İstanbul - 1918</p>
+                <p><strong>Saltanat:</strong> 1876-1909</p>
+            </div>
+        </div>
+
+        <div class="padisah-karti">
+            <div class="kart-baslik">(35) SULTAN V. MEHMED (Mehmed Reşat)</div>
+            <img src="Sultan_Mehmed_Khan_V._1918_C._Pietzner.png" alt="V. Mehmed">
+            <div class="kart-detay">
+                <p><strong>Baba Adı:</strong> Abdülmecid</p>
+                <p><strong>Ana Adı:</strong> Gülcemal Kadınefendi</p>
+                <p><strong>Doğum:</strong> İstanbul - 1844</p>
+                <p><strong>Vefat:</strong> İstanbul - 1918</p>
+                <p><strong>Saltanat:</strong> 1909-1918</p>
+            </div>
+        </div>
+        <div class="padisah-karti">
+        <div class="kart-baslik">(36) SULTAN VI. MEHMED (Vahdedin)</div>
+        <img src="Sultan_Mehmed_VI_of_the_Ottoman_Empire.jpg" alt="VI. Mehmed">
+        <div class="kart-detay">
+            <p><strong>Baba Adı:</strong> Abdülmecid</p>
+            <p><strong>Ana Adı:</strong> Gülistü Kadınefendi</p>
+            <p><strong>Doğum:</strong> İstanbul - 1861</p>
+            <p><strong>Vefat:</strong> San Remo - 1926</p>
+            <p><strong>Saltanat:</strong> 1918-1922</p>
+        </div>
+        </div>
+   
+        </div>
+    </div>
+</body>
+</html>
