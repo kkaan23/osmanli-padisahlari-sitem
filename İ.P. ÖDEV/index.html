@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* =========================================
+   GENEL AYARLAR VE ARKA PLAN (Turkuaz Teması)
+   ========================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa; /* Göz yormayan çok açık turkuaz/buz mavisi */
+    color: #2c3e50; /* Yazıların okunabilir olması için koyu gri/lacivert */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* En üstteki HTML-2 Uygulama Sitesi yazısı */
+#top {
+    text-align: center;
+    color: #00838f;
+    margin-top: 0;
+}
+
+/* Sitenin tamamını saran ve ortalayan ana kutu */
+.kapsayici {
+    max-width: 1000px; /* Sitenin genişliğini sınırlar */
+    margin: 0 auto; /* Sayfayı tam ortaya hizalar */
+    background-color: #ffffff;
+    border-radius: 12px; /* Köşeleri yumuşatır */
+    box-shadow: 0 8px 25px rgba(0, 131, 143, 0.15); /* Etrafına hafif turkuaz gölge verir */
+    overflow: hidden; 
+}
+
+/* =========================================
+   ÜST BAŞLIK ALANI (HEADER)
+   ========================================= */
+header {
+    background: linear-gradient(135deg, #00acc1, #006064); /* Canlı turkuazdan koyuya doğru geçiş efekti */
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 5px solid #004d40; /* Alt kısmına koyu bir çizgi */
+}
+
+header hgroup h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Yazıya derinlik katar */
+}
+
+header hgroup h2 {
+    margin: 10px 0 0 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #b2ebf2; /* Alt başlık için çok açık turkuaz */
+}
+
+/* =========================================
+   İÇERİK BÖLÜMÜ (Ana İçerik ve Yan Menü Yan Yana)
+   ========================================= */
+.içerik {
+    display: flex; /* article ve aside'ı yan yana dizer */
+    flex-wrap: wrap; /* Ekrana sığmazsa alt satıra atar (Mobil uyum) */
+    padding: 25px;
+    gap: 25px; /* Aralarına boşluk bırakır */
+}
+
+/* Sol Taraf (Dönemler) */
+article {
+    flex: 3; /* Ekranın büyük kısmını kaplar */
+    min-width: 300px;
+}
+
+/* Dönem Kutucuklarının Tasarımı */
+section {
+    background-color: #f9fdfd;
+    border-left: 6px solid #26c6da; /* Sol tarafta kalın turkuaz vurgu çizgisi */
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Fareyle üzerine gelme animasyonu */
+}
+
+/* Fareyle üzerine gelince kutuyu hafif yukarı kaldırır */
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 172, 193, 0.15);
+}
+
+section h3 {
+    color: #00838f;
+    margin-top: 0;
+    border-bottom: 2px solid #e0f7fa;
+    padding-bottom: 8px;
+}
+
+/* Listelerin Tasarımı */
+section ul {
+    list-style-type: none; /* Varsayılan noktaları kaldırır */
+    padding: 0;
+}
+
+section ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Kendi özel turkuaz listeleme noktamızı ekliyoruz */
+section ul li::before {
+    content: '■'; /* Kare şeklinde ikon */
+    color: #00acc1;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+/* =========================================
+   SAĞ YAN MENÜ (ASIDE)
+   ========================================= */
+aside {
+    flex: 1; /* Ekranın dar kısmını kaplar */
+    min-width: 250px;
+    background-color: #e0f7fa; /* Menüye açık turkuaz arka plan */
+    border: 2px solid #b2ebf2;
+    padding: 20px;
+    border-radius: 8px;
+    align-self: flex-start; /* İçeriğin uzunluğuna göre kendini ayarlar */
+}
+
+aside h4 {
+    color: #006064;
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 2px dashed #00acc1; /* Kesik çizgili alt sınır */
+    padding-bottom: 12px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Yan menüdeki buton görünümü */
+aside ul li a {
+    display: block;
+    background-color: #00acc1; /* Canlı turkuaz buton */
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+aside ul li a:hover {
+    background-color: #00838f; /* Üzerine gelince renk koyulaşır */
+    transform: scale(1.03); /* Hafifçe büyür */
+}
+
+/* =========================================
+   ALT BİLGİ (FOOTER)
+   ========================================= */
+footer {
+    background-color: #004d40; /* En alt kısım için çok koyu turkuaz/yeşil */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    border-top: 4px solid #26c6da;
+}
+
+footer p {
+    margin: 0 0 10px 0;
+}
+
+footer address {
+    font-style: normal;
+    color: #80cbc4; /* İletişim bilgileri için açık nane yeşili tonu */
+}
+
+/* =========================================
+   MOBİL EKRAN UYUMU (Responsive Design)
+   ========================================= */
+@media (max-width: 768px) {
+    .içerik {
+        flex-direction: column; /* Telefondan girilirse yan menüyü otomatik alta atar */
+    }
+}
+    </style>
+</head>
+<body>
+    <h1 id="top"> HTML-2 Uygulama Sitesi</h1>
+    <br> <br> 
+    <div class="kapsayici">
+        <header>
+            <hgroup>
+                <h1>OSMANLI PADİŞAHLARI</h1>
+                <h2>Padişahlar Hakkında Kısa Bilgiler</h2>
+            </hgroup>
+        </header>
+        <div class="içerik">
+            <article>
+                <section id="Anasayfa">
+                <h3>Kuruluş Dönemi Padişahları</h3>
+                <ul>  
+                    <li>Osman Gazi</li>
+                    <li>Orhan Gazi</li>
+                    <li>Murat Hüdavendigar</li>
+                    <li>Yıldırım Bayezid</li>
+                    <li>Çelebi Mehmet</li>
+                    <li>2.Murat</li>
+                </ul>
+                </section>
+                <section>
+                    <h3>Yükseliş Dönemi Padişahları</h3>
+                        <ul>
+                            <li>Fatih Sultan Mehmet</li>
+                            <li>2.Bayezid</li>
+                            <li>Yavuz Sultan Selim</li>
+                            <li>Kanuni Sultan Süleyman</li>
+                            <li>2.Selim</li>
+                            <li>3.Murat</li>
+                        </ul>
+                </section>
+                <section>
+                    <h3>Duraklama Dönemi Padişahları</h3>
+                    <ul>
+                        <li>3.Mehmet</li>
+                        <li>1.Ahmed</li>
+                        <li>1.Mustafa</li>
+                        <li>Genç Osman</li>
+                        <li>4.Murat</li>
+                        <li>1.İbrahim</li>
+                        <li>4.Mehmet</li>
+                        <li>2.Süleyman</li>
+                        <li>2.Ahmed</li>
+                        <li>2.Mustafa</li>
+                    </ul>
+                    </p>
+                </section>
+                <section>
+                    <h3>Gerileme Dönemi Padişahları</h3>
+                    <ul>
+                        <li>3.Ahmed</li>
+                        <li>1.Mahmud</li>
+                        <li>3.Osman Mustafa</li>
+                        <li>3.Mustafa</li>
+                        <li>1.Abdülhamid</li>
+                        <li>3.Selim</li>
+                    </ul>
+                    </p>
+                </section>
+                <section>
+                    <h3>Dağılma Dönemi Padişahları</h3>
+                    <ul>
+                        <li>4.Mustafa</li>
+                        <li>2.Mahmud</li>
+                        <li>Abdülmecid</li>
+                        <li>Abdülaziz</li>
+                        <li>5.Murat</li>
+                        <li>2.Abdülhamid</li>
+                        <li>Mehmet Reşat</li>
+                        <li>6.Mehmet (Vahdeddin) </li>
+                    </ul>
+                </section>
+            </article>
+            <aside>
+                <h4>Hızlı Bağlantılar</h4>
+                <ul>
+                    <li><a href="padisahlar.html">Padişahlar Resimleri</a></li>
+                </ul>
+            </aside>
+        </div>
+         <footer>
+        <p>&copy; 2026 Osman Padişahları: Kadir Kağan Kayabaş Tüm Hakları Saklıdır.</p>
+        <!--ADDRESS-->
+        <address>
+            E-posta:Kadirkagan23@gmail.com  Tel:0546 623 9303
+        </address>
+      </footer>
+    </div>
+</body>
+</html>
